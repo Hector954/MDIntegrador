@@ -1,4 +1,4 @@
-package com.mycompany.md_imtegrador;
+package com.mycompany.md_integrador;
 /**
  *
  * @author hpave, KoRnelius87
