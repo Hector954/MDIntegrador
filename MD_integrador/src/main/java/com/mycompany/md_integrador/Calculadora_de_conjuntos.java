@@ -6,14 +6,23 @@ package com.mycompany.md_integrador;
  */
 public class Calculadora_de_conjuntos extends javax.swing.JFrame {
 
-    mUnion u = new mUnion();
-    int count=1;
+    public String[] splitA() {
+        String[] aA = cA.getText().split(",");
+        return aA;
+    }
 
-   Calculadora_de_conjuntos() {
+    public String[] splitB() {
+        String[] aB = cB.getText().split(",");
+        return aB;
+    }
+
+    operadores op = new operadores();
+
+    Calculadora_de_conjuntos() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -32,10 +41,6 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
         mDS = new javax.swing.JButton();
         Jlabel12 = new javax.swing.JLabel();
         cR = new javax.swing.JLabel();
-        QtyA = new javax.swing.JButton();
-        btnDb = new javax.swing.JButton();
-        QtyB = new javax.swing.JButton();
-        btnDa = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -92,38 +97,14 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
 
         Jlabel12.setText("Selecciona una operacion");
 
-        QtyA.setText("Qty Datos");
-        QtyA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                QtyAActionPerformed(evt);
-            }
-        });
-
-        btnDb.setText("Datos");
-        btnDb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDbActionPerformed(evt);
-            }
-        });
-
-        QtyB.setText("Qty Datos");
-        QtyB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                QtyBActionPerformed(evt);
-            }
-        });
-
-        btnDa.setText("Datos");
-        btnDa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDaActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Jlabel12)
+                .addGap(220, 220, 220))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -139,39 +120,25 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
                         .addComponent(mDS))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(242, 242, 242)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(jLabel4)
+                                .addGap(162, 162, 162)
+                                .addComponent(cR, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2))
+                                .addGap(37, 37, 37)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cB, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cA, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(22, 22, 22)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(jLabel4)
-                        .addGap(162, 162, 162)
-                        .addComponent(cR, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
-                        .addGap(37, 37, 37)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cB, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cA, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(QtyA)
-                                .addGap(20, 20, 20)
-                                .addComponent(btnDa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(QtyB)
-                                .addGap(20, 20, 20)
-                                .addComponent(btnDb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(22, 22, 22))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Jlabel12)
-                .addGap(220, 220, 220))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,15 +148,11 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cA, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(QtyA)
-                    .addComponent(btnDa))
+                    .addComponent(jLabel2))
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cB, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(QtyB)
-                    .addComponent(btnDb))
+                    .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(Jlabel12)
                 .addGap(43, 43, 43)
@@ -210,7 +173,7 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mUActionPerformed
-        cR.setText("{" +u.unir()+"}"); 
+        cR.setText("{" + op.unir(splitA(), splitB()) + "}");
     }//GEN-LAST:event_mUActionPerformed
 
     private void mIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mIActionPerformed
@@ -224,61 +187,6 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
     private void cAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cAActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cAActionPerformed
-
-    private void btnDaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDaActionPerformed
-        u.setCa(cA.getText(),count-1);
-        cA.setText(null);
-        cA.requestFocus();
-        count++;
-
-        if (count>u.getSizeA()){
-            for(int i=1;i<=u.getSizeA();i++){
-                cA.setText(cA.getText()+u.getCa(i-1)+";");
-            }
-            cA.setText("{"+cA.getText()+"}");
-            count=1;
-           btnDa.setEnabled(false);
-        }
-        else{
-            btnDa.setText("Dato: "+count+" / "+u.getSizeA());
-            }
-    }//GEN-LAST:event_btnDaActionPerformed
-
-    private void QtyAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QtyAActionPerformed
-        u.ConjuntoCa(Integer.parseInt(cA.getText()));
-        btnDa.setText("Dato: 1/"+u.getSizeA());
-        cA.setText(null);
-        cA.requestFocus();
-        QtyA.setEnabled(false);
-    }//GEN-LAST:event_QtyAActionPerformed
-
-    private void QtyBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QtyBActionPerformed
-        u.ConjuntoCb(Integer.parseInt(cB.getText()));
-        btnDb.setText("Dato: 1 /"+u.getSizeB());
-        cB.setText(null);
-        cB.requestFocus();
-        QtyB.setEnabled(false);
-    }//GEN-LAST:event_QtyBActionPerformed
-
-    private void btnDbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDbActionPerformed
-       u.setCb(cB.getText(),count-1);
-        cB.setText(null);
-        cB.requestFocus();
-        count++;
-
-        if (count>u.getSizeB()){
-            for(int i=1;i<=u.getSizeB();i++){
-                cB.setText(cB.getText()+u.getCb(i-1)+";");
-            }
-            cB.setText("{"+cB.getText()+"}");
-            count=1;
-            btnDb.setEnabled(false);
-        }
-        else{
-            btnDb.setText("Dato: "+count+" / "+u.getSizeB());
-
-        }     
-    }//GEN-LAST:event_btnDbActionPerformed
 
     /**
      * @param args the command line arguments
@@ -317,10 +225,6 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Jlabel12;
-    private javax.swing.JButton QtyA;
-    private javax.swing.JButton QtyB;
-    private javax.swing.JButton btnDa;
-    private javax.swing.JButton btnDb;
     private javax.swing.JTextField cA;
     private javax.swing.JTextField cB;
     private javax.swing.JLabel cR;
