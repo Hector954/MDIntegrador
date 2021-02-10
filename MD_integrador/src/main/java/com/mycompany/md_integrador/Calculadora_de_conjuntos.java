@@ -1,5 +1,7 @@
 package com.mycompany.md_integrador;
 
+
+
 /**
  * @author Armando
  * @author ParamoH
@@ -36,11 +38,12 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         mU = new javax.swing.JButton();
         mI = new javax.swing.JButton();
-        mC = new javax.swing.JButton();
         mD = new javax.swing.JButton();
         mDS = new javax.swing.JButton();
         Jlabel12 = new javax.swing.JLabel();
         cR = new javax.swing.JLabel();
+        reset = new javax.swing.JButton();
+        mC = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -84,9 +87,12 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
             }
         });
 
-        mC.setText("Complemento");
-
         mD.setText("Diferencia");
+        mD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mDActionPerformed(evt);
+            }
+        });
 
         mDS.setText("Diferencia simetrica");
         mDS.addActionListener(new java.awt.event.ActionListener() {
@@ -97,23 +103,33 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
 
         Jlabel12.setText("Selecciona una operacion");
 
+        reset.setText("Reset");
+        reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resetActionPerformed(evt);
+            }
+        });
+
+        mC.setText("Complemento");
+        mC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mCActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Jlabel12)
-                .addGap(220, 220, 220))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(mU)
                         .addGap(18, 18, 18)
                         .addComponent(mI, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(mC)
+                        .addComponent(mC, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(mD)
                         .addGap(18, 18, 18)
@@ -128,7 +144,9 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
                                 .addGap(1, 1, 1)
                                 .addComponent(jLabel4)
                                 .addGap(162, 162, 162)
-                                .addComponent(cR, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(cR, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(reset))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel3)
@@ -136,9 +154,12 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
                                 .addGap(37, 37, 37)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(cB, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cA, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(22, 22, 22)))))
+                                    .addComponent(cA, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Jlabel12)
+                .addGap(220, 220, 220))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,31 +174,37 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cB, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(Jlabel12)
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(mU)
                     .addComponent(mI)
-                    .addComponent(mC)
                     .addComponent(mD)
-                    .addComponent(mDS))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cR, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(34, 34, 34))
+                    .addComponent(mDS)
+                    .addComponent(mC))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cR, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addGap(34, 34, 34))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(reset)
+                        .addGap(19, 19, 19))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void mUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mUActionPerformed
-        cR.setText("{" + op.unir(splitA(), splitB()) + "}");
+       cR.setText("A U B = {" + op.unir(splitA(), splitB()) + "}");
     }//GEN-LAST:event_mUActionPerformed
 
     private void mIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mIActionPerformed
-        // TODO add your handling code here:
+        cR.setText("{" + op.interseccion(splitA(), splitB()) + "}");
     }//GEN-LAST:event_mIActionPerformed
 
     private void mDSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mDSActionPerformed
@@ -187,6 +214,22 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
     private void cAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cAActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cAActionPerformed
+
+    private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
+        cA.setText("");
+       cB.setText("");
+       cR.setText("");
+       cA.requestFocus();
+
+    }//GEN-LAST:event_resetActionPerformed
+
+    private void mDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mDActionPerformed
+         cR.setText("A-B = {" + op.DiferenciaA(splitA(), splitB()) + "}          B-A = {" + op.DiferenciaB(splitA(), splitB())+"}");
+    }//GEN-LAST:event_mDActionPerformed
+
+    private void mCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mCActionPerformed
+         cR.setText("{" + op.complemento(splitA(), splitB()) + "}");
+    }//GEN-LAST:event_mCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,5 +281,6 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
     private javax.swing.JButton mDS;
     private javax.swing.JButton mI;
     private javax.swing.JButton mU;
+    private javax.swing.JButton reset;
     // End of variables declaration//GEN-END:variables
 }

@@ -40,20 +40,15 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="Jlabel12" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="220" max="-2" attributes="0"/>
-          </Group>
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Component id="mU" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="mI" min="-2" pref="93" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="mC" min="-2" max="-2" attributes="0"/>
+                      <Component id="mC" min="-2" pref="98" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="mD" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -71,6 +66,8 @@
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
                               <Component id="cR" min="-2" pref="175" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="reset" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
@@ -82,12 +79,16 @@
                                   <Component id="cB" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
                                   <Component id="cA" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Component id="Jlabel12" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="220" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -106,22 +107,31 @@
                   <Component id="cB" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="43" max="32767" attributes="0"/>
+              <EmptySpace pref="13" max="32767" attributes="0"/>
               <Component id="Jlabel12" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="mU" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="mI" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="mC" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="mD" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="mDS" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="mC" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="cR" alignment="3" min="-2" pref="65" max="-2" attributes="0"/>
-                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cR" alignment="3" min="-2" pref="65" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="reset" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -173,18 +183,13 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mIActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="mC">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Complemento"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mCActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="mD">
       <Properties>
         <Property name="text" type="java.lang.String" value="Diferencia"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mDActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="mDS">
       <Properties>
@@ -200,6 +205,22 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="cR">
+    </Component>
+    <Component class="javax.swing.JButton" name="reset">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Reset"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="resetActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="mC">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Complemento"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mCActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
