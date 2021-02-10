@@ -85,6 +85,11 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
         });
 
         mC.setText("Complemento");
+        mC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mCActionPerformed(evt);
+            }
+        });
 
         mD.setText("Diferencia");
 
@@ -136,8 +141,7 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
                                 .addGap(37, 37, 37)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(cB, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cA, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(22, 22, 22)))))
+                                    .addComponent(cA, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -177,7 +181,7 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
     }//GEN-LAST:event_mUActionPerformed
 
     private void mIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mIActionPerformed
-        // TODO add your handling code here:
+        cR.setText("{" + op.interseccion(splitA(), splitB()) + "}");
     }//GEN-LAST:event_mIActionPerformed
 
     private void mDSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mDSActionPerformed
@@ -187,6 +191,10 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
     private void cAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cAActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cAActionPerformed
+
+    private void mCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mCActionPerformed
+        cR.setText("{" + op.complemento(splitA(), splitB()) + "}");
+    }//GEN-LAST:event_mCActionPerformed
 
     /**
      * @param args the command line arguments
