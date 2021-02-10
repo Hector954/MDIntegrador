@@ -21,6 +21,7 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
     Calculadora_de_conjuntos() {
         initComponents();
         this.setLocationRelativeTo(null);
+        cA.requestFocus();
     }
 
     @SuppressWarnings("unchecked")
@@ -38,9 +39,10 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
         mI = new javax.swing.JButton();
         mC = new javax.swing.JButton();
         mD = new javax.swing.JButton();
-        mDS = new javax.swing.JButton();
+        reset = new javax.swing.JButton();
         Jlabel12 = new javax.swing.JLabel();
         cR = new javax.swing.JLabel();
+        mDS1 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -87,24 +89,32 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
         mC.setText("Complemento");
 
         mD.setText("Diferencia");
-
-        mDS.setText("Diferencia simetrica");
-        mDS.addActionListener(new java.awt.event.ActionListener() {
+        mD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mDSActionPerformed(evt);
+                mDActionPerformed(evt);
+            }
+        });
+
+        reset.setText("Reset");
+        reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resetActionPerformed(evt);
             }
         });
 
         Jlabel12.setText("Selecciona una operacion");
 
+        mDS1.setText("Diferencia simetrica");
+        mDS1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mDS1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Jlabel12)
-                .addGap(220, 220, 220))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -116,8 +126,8 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
                         .addComponent(mC)
                         .addGap(18, 18, 18)
                         .addComponent(mD)
-                        .addGap(18, 18, 18)
-                        .addComponent(mDS))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(mDS1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(242, 242, 242)
                         .addComponent(jLabel1))
@@ -136,9 +146,17 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
                                 .addGap(37, 37, 37)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(cB, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cA, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(22, 22, 22)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(cA, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(18, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Jlabel12)
+                        .addGap(220, 220, 220))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(reset)
+                        .addGap(88, 88, 88))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,7 +167,9 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cA, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addGap(43, 43, 43)
+                .addGap(8, 8, 8)
+                .addComponent(reset)
+                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cB, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
@@ -161,7 +181,7 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
                     .addComponent(mI)
                     .addComponent(mC)
                     .addComponent(mD)
-                    .addComponent(mDS))
+                    .addComponent(mDS1))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cR, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -173,20 +193,31 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mUActionPerformed
-        cR.setText("{" + op.unir(splitA(), splitB()) + "}");
+        cR.setText("A U B = {" + op.unir(splitA(), splitB()) + "}");
     }//GEN-LAST:event_mUActionPerformed
 
     private void mIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mIActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mIActionPerformed
 
-    private void mDSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mDSActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mDSActionPerformed
+    private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
+       cA.setText("");
+       cB.setText("");
+       cR.setText("");
+       cA.requestFocus();
+    }//GEN-LAST:event_resetActionPerformed
 
     private void cAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cAActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cAActionPerformed
+
+    private void mDS1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mDS1ActionPerformed
+        
+    }//GEN-LAST:event_mDS1ActionPerformed
+
+    private void mDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mDActionPerformed
+        cR.setText("A-B = {" + op.DiferenciaA(splitA(), splitB()) + "}          B-A = {" + op.DiferenciaB(splitA(), splitB())+"}");
+    }//GEN-LAST:event_mDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,8 +266,9 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton mC;
     private javax.swing.JButton mD;
-    private javax.swing.JButton mDS;
+    private javax.swing.JButton mDS1;
     private javax.swing.JButton mI;
     private javax.swing.JButton mU;
+    private javax.swing.JButton reset;
     // End of variables declaration//GEN-END:variables
 }
