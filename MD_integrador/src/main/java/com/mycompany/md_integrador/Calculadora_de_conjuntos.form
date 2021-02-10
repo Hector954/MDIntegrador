@@ -186,6 +186,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Complemento"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mCActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="mD">
       <Properties>
