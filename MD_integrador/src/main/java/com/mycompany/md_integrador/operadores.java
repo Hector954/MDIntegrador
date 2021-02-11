@@ -1,20 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.md_integrador;
 
 /**
  *
- * @author Armando
+ * @author Armando Moran
  * @author Hector Paramo
  */
 public class operadores {
-    
+
     private String[] result;
-// metodo unir
-    public String unir(String [] arrayA, String [] arrayB) {
+
+    // metodo unir
+    public String unir(String[] arrayA, String[] arrayB) {
         int count = 0;
         int aux = 0;
         String imprimir = "";
@@ -38,7 +34,7 @@ public class operadores {
                 count++;
             }
         }
-        
+
         for (int i = 0; i < arrayA.length + arrayB.length; i++) {
             if (result[i] != null) {
                 imprimir = imprimir + result[i] + ";";
@@ -46,9 +42,9 @@ public class operadores {
         }
         return imprimir;
     }
+
     // metodo inserccion
-    
-     public String interseccion(String[] arrayA, String[] arrayB) {
+    public String interseccion(String[] arrayA, String[] arrayB) {
 
         result = new String[Math.max(arrayA.length, arrayB.length)];
         String imprimir = "";
@@ -68,31 +64,35 @@ public class operadores {
         }
         return imprimir;
     }
-     // metodoo complemento
-    public String complemento(String[] arrayA, String[] arrayB) {
-        String imprimir = "";
-         result = new String[arrayA.length + arrayB.length];
+
+    // metodo complemento
+    public String complementoA(String[] arrayA, String[] arrayB) {
         
+        String [] result;
+        result=arrayA;
+        String imprimir = "";
+/*      segun yo igualo el result a A (seria mi universo result) 
+        y lo que le no tenga B seria el complemento de A
+        
+*/
         for (int i = 0; i < arrayA.length; i++) {
-            result[i] = arrayA[i];
-        }
-        for (int j = 0; j < arrayA.length; j++) {
-            for (int i = 0; i < arrayB.length; i++) {
-                if (result[j].equals(arrayB[i])) {
-                    result[j] = arrayB[i];
+            for (int j = 0; j < arrayB.length; j++) {
+                if (arrayA[i].equals(arrayB[j])) {
+                    result[i] = null;
                 }
             }
         }
-         for (int i = 0; i < arrayA.length + arrayB.length; i++) {
+
+        for (int i = 0; i < result.length; i++) {
             if (result[i] != null) {
-                imprimir = imprimir + result[i] + ",";
+                imprimir = imprimir + result[i] + ";";
             }
         }
         return imprimir;
     }
 
-         // Metodo diferencia 
-   public String DiferenciaA(String[] arrayA, String[] arrayB) {
+    // Metodo diferencia 
+    public String DiferenciaA(String[] arrayA, String[] arrayB) {
 
         int count = 0;
         int aux = 0;
@@ -120,15 +120,15 @@ public class operadores {
         }
         return imprimir;
     }
-    
+
     public String DiferenciaB(String[] arrayA, String[] arrayB) {
-        
+
         int count = 0;
         int aux = 0;
         String imprimir = "";
 
         result = new String[arrayA.length + arrayB.length];
-        
+
         // No repetidos en B 
         for (int i = 0; i < arrayB.length; i++) {
             aux = 0;
@@ -151,6 +151,3 @@ public class operadores {
         return imprimir;
     }
 }
-
-
-     

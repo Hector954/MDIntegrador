@@ -11,4 +11,11 @@
         <maven.compiler.target>15</maven.compiler.target>
     </properties>
     <name>MD_integrador</name>
+    <dependencies>
+        <dependency>
+            <groupId>org.netbeans.external</groupId>
+            <artifactId>AbsoluteLayout</artifactId>
+            <version>RELEASE122</version>
+        </dependency>
+    </dependencies>
 </project>

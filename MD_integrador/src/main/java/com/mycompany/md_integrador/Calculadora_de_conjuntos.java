@@ -1,7 +1,5 @@
 package com.mycompany.md_integrador;
 
-
-
 /**
  * @author Armando
  * @author ParamoH
@@ -9,12 +7,12 @@ package com.mycompany.md_integrador;
 public class Calculadora_de_conjuntos extends javax.swing.JFrame {
 
     public String[] splitA() {
-        String[] aA = cA.getText().split(",");
+        String[] aA = cA.getText().split(".");
         return aA;
     }
 
     public String[] splitB() {
-        String[] aB = cB.getText().split(",");
+        String[] aB = cB.getText().split(".");
         return aB;
     }
 
@@ -200,11 +198,11 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mUActionPerformed
-       cR.setText("A U B = {" + op.unir(splitA(), splitB()) + "}");
+        cR.setText("A U B = {" + op.unir(splitA(), splitB()) + "}");
     }//GEN-LAST:event_mUActionPerformed
 
     private void mIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mIActionPerformed
-        cR.setText("{" + op.interseccion(splitA(), splitB()) + "}");
+        cR.setText("A ∩ B  o  B ∩ A = {" + op.interseccion(splitA(), splitB()) + "}");
     }//GEN-LAST:event_mIActionPerformed
 
     private void mDSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mDSActionPerformed
@@ -217,23 +215,21 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
         cA.setText("");
-       cB.setText("");
-       cR.setText("");
-       cA.requestFocus();
+        cB.setText("");
+        cR.setText("");
+        cA.requestFocus();
 
     }//GEN-LAST:event_resetActionPerformed
 
     private void mDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mDActionPerformed
-         cR.setText("A-B = {" + op.DiferenciaA(splitA(), splitB()) + "}          B-A = {" + op.DiferenciaB(splitA(), splitB())+"}");
+        cR.setText("A-B = {" + op.DiferenciaA(splitA(), splitB()) +
+                "}          B-A = {" + op.DiferenciaB(splitA(), splitB()) + "}");
     }//GEN-LAST:event_mDActionPerformed
 
     private void mCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mCActionPerformed
-         cR.setText("{" + op.complemento(splitA(), splitB()) + "}");
+        cR.setText("{" + op.complementoA(splitA(), splitB()) + "}");
     }//GEN-LAST:event_mCActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
