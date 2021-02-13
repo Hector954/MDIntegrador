@@ -150,4 +150,44 @@ public class operadores {
         }
         return imprimir;
     }
+    
+    // diferencia simetrica
+     public String DiferenciaSimetrica(String[] arrayA, String[] arrayB){
+        int count=0;
+        int aux=0;
+        
+
+        
+        String _Cadena=""; //Salida de Pantalla
+        result=new String [arrayA.length+arrayB.length];//Llena de Nullos Conjunto Resultante
+        //Los no Repetidos de A
+        for (int i=0;i<arrayA.length;i++){
+            aux=0;
+            for (int j=0;j<arrayB.length;j++){
+                if (arrayA[i].equals(arrayB[j]))           
+                  aux=1;  
+            }
+            if (aux==0){
+            result[count]=arrayA[i];
+            count++;
+            }
+        }
+        //Los no Repetidos de B
+        for (int i=0;i<arrayB.length;i++){
+            aux=0;
+            for (int j=0;j<arrayA.length;j++){
+                if (arrayB[i].equals(arrayA[j]))           
+                  aux=1;  
+            }
+            if (aux==0){
+            result[count]=arrayB[i];
+            count++;
+            }
+        }
+        //Llena String para Salida en Pantalla
+        for (int i=0;i<arrayA.length+arrayB.length;i++)
+            if (result[i]!=null)
+            _Cadena=_Cadena+result[i]+";";
+        return _Cadena; 
+    }
 }

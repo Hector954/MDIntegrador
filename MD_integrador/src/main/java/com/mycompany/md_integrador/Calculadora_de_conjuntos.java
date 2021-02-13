@@ -7,12 +7,12 @@ package com.mycompany.md_integrador;
 public class Calculadora_de_conjuntos extends javax.swing.JFrame {
 
     public String[] splitA() {
-        String[] aA = cA.getText().split(".");
+        String[] aA = cA.getText().split(",");
         return aA;
     }
 
     public String[] splitB() {
-        String[] aB = cB.getText().split(".");
+        String[] aB = cB.getText().split(",");
         return aB;
     }
 
@@ -235,7 +235,7 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
     }//GEN-LAST:event_mIActionPerformed
 
     private void mDSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mDSActionPerformed
-        // TODO add your handling code here:
+         cR.setText("A Δ B = {" + op.DiferenciaSimetrica(splitA(), splitB()) + "}");
     }//GEN-LAST:event_mDSActionPerformed
 
     private void cAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cAActionPerformed
