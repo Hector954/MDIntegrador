@@ -120,6 +120,7 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
         mU.setFont(new java.awt.Font("Lucida Console", 0, 16)); // NOI18N
         mU.setForeground(new java.awt.Color(51, 255, 0));
         mU.setText("Union");
+        mU.setToolTipText("Contiene todos los elementos de A y de B");
         mU.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(51, 255, 0), new java.awt.Color(51, 255, 0), null));
         mU.setContentAreaFilled(false);
         mU.addActionListener(new java.awt.event.ActionListener() {
@@ -131,6 +132,7 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
         mI.setFont(new java.awt.Font("Lucida Console", 0, 16)); // NOI18N
         mI.setForeground(new java.awt.Color(51, 255, 0));
         mI.setText("Intersección");
+        mI.setToolTipText("Contiene todos los elementos comunes de A y B");
         mI.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(51, 255, 0), new java.awt.Color(51, 255, 0), null));
         mI.setContentAreaFilled(false);
         mI.addActionListener(new java.awt.event.ActionListener() {
@@ -142,6 +144,7 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
         mD.setFont(new java.awt.Font("Lucida Console", 0, 16)); // NOI18N
         mD.setForeground(new java.awt.Color(51, 255, 0));
         mD.setText("Diferencia");
+        mD.setToolTipText("Contiene todos los elementos de A que no pertenecen a B");
         mD.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(51, 255, 0), new java.awt.Color(51, 255, 0), null));
         mD.setContentAreaFilled(false);
         mD.addActionListener(new java.awt.event.ActionListener() {
@@ -153,6 +156,7 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
         mDS.setFont(new java.awt.Font("Lucida Console", 0, 16)); // NOI18N
         mDS.setForeground(new java.awt.Color(51, 255, 0));
         mDS.setText("Simetrica");
+        mDS.setToolTipText("Conjunto que contiene los elementos de A y B que no son comunes");
         mDS.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(51, 255, 0), null, new java.awt.Color(51, 255, 0)));
         mDS.setContentAreaFilled(false);
         mDS.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +168,7 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
         cR.setColumns(20);
         cR.setFont(new java.awt.Font("Lucida Console", 0, 24)); // NOI18N
         cR.setLineWrap(true);
-        cR.setRows(3);
+        cR.setRows(2);
         cR.setTabSize(5);
         cR.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         cR.setEnabled(false);
@@ -282,7 +286,7 @@ public class Calculadora_de_conjuntos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Verificar llenado de los conjuntos", "Error en conjuntos", JOptionPane.ERROR_MESSAGE);
         } else 
         cR.setText("A-B = {" + op.DiferenciaA(splitA(), splitB())
-                + "}          B-A = {" + op.DiferenciaB(splitA(), splitB()) + "}");
+                + "}\nB-A = {" + op.DiferenciaB(splitA(), splitB()) + "}");
     }//GEN-LAST:event_mDActionPerformed
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
