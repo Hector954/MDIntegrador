@@ -8,7 +8,7 @@ package com.mycompany.md_integrador;
 public class operadores {
 
     private String[] result;
-
+    
     // metodo unir
     public String unir(String[] arrayA, String[] arrayB) {
         int count = 0;
@@ -37,17 +37,17 @@ public class operadores {
 
         for (int i = 0; i < arrayA.length + arrayB.length; i++) {
             if (result[i] != null) {
-                imprimir = imprimir + result[i] + ";";
+                imprimir = imprimir + result[i] + ",";
             }
         }
-        return imprimir;
+        return imprimir.substring(0, imprimir.length()-1);
     }
 
     // metodo inserccion
     public String interseccion(String[] arrayA, String[] arrayB) {
 
         result = new String[Math.max(arrayA.length, arrayB.length)];
-        String imprimir = "";
+        String imprimir = " ";
 
         for (int i = 0; i < arrayA.length; i++) {
             for (int j = 0; j < arrayB.length; j++) {
@@ -59,36 +59,10 @@ public class operadores {
 
         for (int i = 0; i < result.length; i++) {
             if (result[i] != null) {
-                imprimir = imprimir + result[i] + ";";
+                imprimir = imprimir + result[i] + ",";
             }
         }
-        return imprimir;
-    }
-
-    // metodo complemento
-    public String complementoA(String[] arrayA, String[] arrayB) {
-        
-        String [] result;
-        result=arrayA;
-        String imprimir = "";
-/*      segun yo igualo el result a A (seria mi universo result) 
-        y lo que le no tenga B seria el complemento de A
-        
-*/
-        for (int i = 0; i < arrayA.length; i++) {
-            for (int j = 0; j < arrayB.length; j++) {
-                if (arrayA[i].equals(arrayB[j])) {
-                    result[i] = null;
-                }
-            }
-        }
-
-        for (int i = 0; i < result.length; i++) {
-            if (result[i] != null) {
-                imprimir = imprimir + result[i] + ";";
-            }
-        }
-        return imprimir;
+        return imprimir.substring(0, imprimir.length()-1);
     }
 
     // Metodo diferencia 
@@ -118,7 +92,7 @@ public class operadores {
                 imprimir = imprimir + result[i] + ",";
             }
         }
-        return imprimir;
+        return imprimir.substring(0, imprimir.length()-1);
     }
 
     public String DiferenciaB(String[] arrayA, String[] arrayB) {
@@ -148,7 +122,7 @@ public class operadores {
                 imprimir = imprimir + result[i] + ",";
             }
         }
-        return imprimir;
+        return imprimir.substring(0, imprimir.length()-1);
     }
     
     // diferencia simetrica
@@ -156,9 +130,7 @@ public class operadores {
         int count=0;
         int aux=0;
         
-
-        
-        String _Cadena=""; //Salida de Pantalla
+        String imprimir=""; //Salida de Pantalla
         result=new String [arrayA.length+arrayB.length];//Llena de Nullos Conjunto Resultante
         //Los no Repetidos de A
         for (int i=0;i<arrayA.length;i++){
@@ -185,9 +157,11 @@ public class operadores {
             }
         }
         //Llena String para Salida en Pantalla
-        for (int i=0;i<arrayA.length+arrayB.length;i++)
+        for (int i=0;i<arrayA.length+arrayB.length;i++){
             if (result[i]!=null)
-            _Cadena=_Cadena+result[i]+";";
-        return _Cadena; 
+            imprimir=imprimir+result[i]+",";
+        }
+        
+        return imprimir.substring(0, imprimir.length()-1);
     }
 }
