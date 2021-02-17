@@ -1,7 +1,5 @@
 package com.mycompany.md_integrador;
-
 import javax.swing.JOptionPane;
-
 /**
  * @author Armando
  * @author ParamoH
