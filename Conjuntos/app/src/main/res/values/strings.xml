@@ -4,7 +4,6 @@
     <string name="unir">Unir</string>
     <string name="simetrica">Simetrica</string>
     <string name="teoria_de_conjuntos">Teoria de Conjuntos</string>
-    <string name="todo">TODO</string>
     <string name="union">Union</string>
     <string name="interseccion">Interseccion</string>
     <string name="cR">...</string>
@@ -13,4 +12,5 @@
     <string name="conjunto_b">Conjunto B</string>
     <string name="conjunto_a">Conjunto A</string>
     <string name="limpiar">Limpiar</string>
+    <string name="todo">TODO</string>
 </resources>

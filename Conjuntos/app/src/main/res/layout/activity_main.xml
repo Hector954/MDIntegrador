@@ -47,13 +47,12 @@
         app:layout_constraintVertical_bias="0.701" />
 
     <Button
-        android:id="@+id/btnmU"
+        android:id="@+id/mU"
         android:layout_width="184dp"
         android:layout_height="62dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:text="@string/union"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/mI"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +94,7 @@
         android:layout_weight="1"
         android:text="@string/conjunto_b"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnmU"
+        app:layout_constraintBottom_toTopOf="@+id/mU"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.996"
@@ -106,6 +105,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autofillHints=""
+        android:elegantTextHeight="false"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/cB"
@@ -132,6 +132,7 @@
 
     <Button
         android:id="@+id/mI"
+        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="184dp"
         android:layout_height="62dp"
         android:layout_marginStart="8dp"
@@ -140,7 +141,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.703"
-        app:layout_constraintStart_toEndOf="@+id/btnmU"
+        app:layout_constraintStart_toEndOf="@+id/mU"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.572" />
 

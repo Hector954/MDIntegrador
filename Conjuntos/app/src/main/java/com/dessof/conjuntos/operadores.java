@@ -1,15 +1,18 @@
 package com.dessof.conjuntos;
 
+/*
+* @author Armando Moran
+* @author Hector Paramo
+*/
 public class operadores {
 
     private String[] result;
 
     // metodo unir
     public String unir(String[] arrayA, String[] arrayB) {
-        int count = 0;
+        int count = 0, n = 0;
         int aux = 0;
         String imprimir = "";
-
 
         result = new String[arrayA.length + arrayB.length];
         for (int i = 0; i < arrayA.length; i++) {
@@ -31,12 +34,19 @@ public class operadores {
             }
         }
 
+        result = limpiar(result);
+
         for (int i = 0; i < arrayA.length + arrayB.length; i++) {
             if (result[i] != null) {
                 imprimir = imprimir + result[i] + ",";
+                n++;
             }
         }
-        return imprimir.substring(0, imprimir.length()-1);
+        if (n > 0) {
+            return imprimir.substring(0, imprimir.length() - 1);
+        } else {
+            return " ";
+        }
     }
 
     // metodo inserccion
@@ -53,18 +63,20 @@ public class operadores {
             }
         }
 
+        result = limpiar(result);
+
         for (int i = 0; i < result.length; i++) {
             if (result[i] != null) {
                 imprimir = imprimir + result[i] + ",";
             }
         }
-        return imprimir.substring(0, imprimir.length()-1);
+        return imprimir.substring(0, imprimir.length() - 1);
     }
 
     // Metodo diferencia
     public String DiferenciaA(String[] arrayA, String[] arrayB) {
 
-        int count = 0;
+        int count = 0, n = 0;
         int aux = 0;
         String imprimir = "";
         // crea un arreglo con el tamano de los otros dos
@@ -82,18 +94,27 @@ public class operadores {
                 count++;
             }
         }
+
+        result = limpiar(result);
+
         // salida en pantalla
         for (int i = 0; i < arrayA.length + arrayB.length; i++) {
             if (result[i] != null) {
                 imprimir = imprimir + result[i] + ",";
+                n++;
             }
         }
-        return imprimir.substring(0, imprimir.length()-1);
+        if (n > 0) {
+            return imprimir.substring(0, imprimir.length() - 1);
+        } else {
+            return " ";
+        }
+
     }
 
     public String DiferenciaB(String[] arrayA, String[] arrayB) {
 
-        int count = 0;
+        int count = 0, n = 0;
         int aux = 0;
         String imprimir = "";
 
@@ -113,51 +134,83 @@ public class operadores {
             }
         }
 
+        result = limpiar(result);
+
         for (int i = 0; i < arrayA.length + arrayB.length; i++) {
             if (result[i] != null) {
                 imprimir = imprimir + result[i] + ",";
+                n++;
             }
         }
-        return imprimir.substring(0, imprimir.length()-1);
+        if (n > 0) {
+            return imprimir.substring(0, imprimir.length() - 1);
+        } else {
+            return " ";
+        }
     }
 
     // diferencia simetrica
-    public String DiferenciaSimetrica(String[] arrayA, String[] arrayB){
-        int count=0;
-        int aux=0;
+    public String DiferenciaSimetrica(String[] arrayA, String[] arrayB) {
+        int count = 0, n = 0;
+        int aux = 0;
 
-        String imprimir=""; //Salida de Pantalla
-        result=new String [arrayA.length+arrayB.length];//Llena de Nullos Conjunto Resultante
+        String imprimir = ""; //Salida de Pantalla
+        result = new String[arrayA.length + arrayB.length];
         //Los no Repetidos de A
-        for (int i=0;i<arrayA.length;i++){
-            aux=0;
-            for (int j=0;j<arrayB.length;j++){
-                if (arrayA[i].equals(arrayB[j]))
-                    aux=1;
+        for (int i = 0; i < arrayA.length; i++) {
+            aux = 0;
+            for (int j = 0; j < arrayB.length; j++) {
+                if (arrayA[i].equals(arrayB[j])) {
+                    aux = 1;
+                }
             }
-            if (aux==0){
-                result[count]=arrayA[i];
+            if (aux == 0) {
+                result[count] = arrayA[i];
                 count++;
             }
         }
         //Los no Repetidos de B
-        for (int i=0;i<arrayB.length;i++){
-            aux=0;
-            for (int j=0;j<arrayA.length;j++){
-                if (arrayB[i].equals(arrayA[j]))
-                    aux=1;
+        for (int i = 0; i < arrayB.length; i++) {
+            aux = 0;
+            for (int j = 0; j < arrayA.length; j++) {
+                if (arrayB[i].equals(arrayA[j])) {
+                    aux = 1;
+                }
             }
-            if (aux==0){
-                result[count]=arrayB[i];
+            if (aux == 0) {
+                result[count] = arrayB[i];
                 count++;
             }
         }
+
+        result = limpiar(result);
+
         //Llena String para Salida en Pantalla
-        for (int i=0;i<arrayA.length+arrayB.length;i++){
-            if (result[i]!=null)
-                imprimir=imprimir+result[i]+",";
+        for (int i = 0; i < arrayA.length + arrayB.length; i++) {
+            if (result[i] != null) {
+                imprimir = imprimir + result[i] + ",";
+                n++;
+            }
         }
 
-        return imprimir.substring(0, imprimir.length()-1);
+        if (n > 0) {
+            return imprimir.substring(0, imprimir.length() - 1);
+        } else {
+            return " ";
+        }
+    }
+
+    public String[] limpiar(String[] rlimpio) {
+
+        for (int i = 0; i < rlimpio.length; i++) {
+            for (int j = 0; j < rlimpio.length; j++) {
+                if (i != j && rlimpio[j] != null) {
+                    if (rlimpio[j].equals(rlimpio[i])) {
+                        rlimpio[j] = null;
+                    }
+                }
+            }
+        }
+        return rlimpio;
     }
 }

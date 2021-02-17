@@ -4,12 +4,15 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@mipmap/index"
+        android:label="Proyecto Integrador"
+        android:roundIcon="@mipmap/index"
         android:supportsRtl="true"
         android:theme="@style/Theme.Conjuntos">
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".inicio" android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
