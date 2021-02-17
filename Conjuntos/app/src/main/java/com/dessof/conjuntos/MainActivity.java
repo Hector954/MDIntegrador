@@ -85,13 +85,14 @@ public class MainActivity<cR> extends AppCompatActivity {
         // Metodo Diferencia
           btnmD = (Button) findViewById(R.id.mD);
 
-        btnmD.setOnClickListener(new View.OnClickListener() {
+          btnmD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (conjuntoA.getText().length() == 0 || conjuntoB.getText().length() == 0) {
                     Toast.makeText(MainActivity.this,"Verificar llenado de los conjuntos",Toast.LENGTH_LONG).show();
                 } else
-                    conjuntoR.setText("A Δ B = {" + op.DiferenciaSimetrica(splitA(), splitB()) + "}");
+                    conjuntoR.setText("A-B = {" + op.DiferenciaA(splitA(), splitB()) + "} \n B-A = {" + op.DiferenciaB(splitA(), splitB()) + "}");
+
             }
         });
 
@@ -103,11 +104,12 @@ public class MainActivity<cR> extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (conjuntoA.getText().length() == 0 || conjuntoB.getText().length() == 0) {
-                    Toast.makeText(MainActivity.this,"Verificar llenado de los conjuntos",Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Verificar llenado de los conjuntos", Toast.LENGTH_LONG).show();
                 } else
-                    conjuntoR.setText("A-B = {" + op.DiferenciaA(splitA(), splitB())
-                            + "}\nB-A = {" + op.DiferenciaB(splitA(), splitB()) + "}");
+                    conjuntoR.setText("A Δ B = {" + op.DiferenciaSimetrica(splitA(), splitB()) + "}");
+
             }
+
         });
 
 
